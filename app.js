@@ -33,7 +33,12 @@ mongoose
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
+const corsOptions = {
+  origin: "https://active-surf.onrender.com",
+};
+
+app.use(cors(corsOptions));
+
 //ROUTES MIDDLEWARE
 
 app.use("/api", authRoutes);
