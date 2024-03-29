@@ -37,7 +37,7 @@ const corsOptions = {
   origin: "https://active-surf.onrender.com",
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 //ROUTES MIDDLEWARE
 
