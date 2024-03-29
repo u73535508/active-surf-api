@@ -10,9 +10,9 @@ const { isAuthenticated } = require("../middleware/auth");
 
 const router = express.Router();
 
-router.get("/member/getAllMembers", isAuthenticated, getAllMembers);
-router.get("/member/getMember/:id", isAuthenticated, getMember);
-router.get("/member/getDebtors", isAuthenticated, getDebtors);
-router.post("/member/saveMember", isAuthenticated, saveMember);
-router.delete("/member/deleteMember/:id", isAuthenticated, deleteMember);
+router.get("/member/getAllMembers", getAllMembers);
+router.get("/member/getMember/:id", getMember);
+router.get("/member/getDebtors", getDebtors);
+router.post("/member/saveMember", saveMember);
+router.delete("/member/deleteMember/:id", deleteMember);
 module.exports = router;

@@ -12,20 +12,20 @@ const { isAuthenticated } = require("../middleware/auth");
 const router = express.Router();
 router.get(
   "/camp/getCampsForTeacherInRange",
-  isAuthenticated,
+
   getCampsForTeacherInRange
 );
-router.get("/camp/getCampsInRange", isAuthenticated, getCampsInRange);
+router.get("/camp/getCampsInRange", getCampsInRange);
 router.get(
   "/camp/getCampsForMember/:memberId",
-  isAuthenticated,
+
   getCampsForMember
 );
 router.get(
   "/camp/getCampsForTeacher/:teacherId",
-  isAuthenticated,
+
   getCampsForTeacher
 );
-router.post("/camp/saveCamp", isAuthenticated, saveCamp);
-router.delete("/camp/deleteCamp/:campId", isAuthenticated, deleteCamp);
+router.post("/camp/saveCamp", saveCamp);
+router.delete("/camp/deleteCamp/:campId", deleteCamp);
 module.exports = router;

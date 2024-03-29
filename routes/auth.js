@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.post("/signup", signup);
 router.post("/signin", signin);
-router.get("/logout", isAuthenticated, logout);
-router.get("/getme", isAuthenticated, userProfile);
-router.get("/user/:id", isAuthenticated, singleUser);
+router.get("/logout", logout);
+router.get("/getme", userProfile);
+router.get("/user/:id", singleUser);
 module.exports = router;

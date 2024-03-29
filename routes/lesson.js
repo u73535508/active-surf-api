@@ -12,20 +12,20 @@ const { isAuthenticated } = require("../middleware/auth");
 const router = express.Router();
 router.get(
   "/lesson/getLessonsForTeacherInRange",
-  isAuthenticated,
+
   getLessonsForTeacherInRange
 );
-router.get("/lesson/getLessonsInRange", isAuthenticated, getLessonsInRange);
+router.get("/lesson/getLessonsInRange", getLessonsInRange);
 router.get(
   "/lesson/getLessonsForMember/:memberId",
-  isAuthenticated,
+
   getLessonsForMember
 );
 router.get(
   "/lesson/getLessonsForTeacher/:teacherId",
-  isAuthenticated,
+
   getLessonsForTeacher
 );
-router.post("/lesson/saveLesson", isAuthenticated, saveLesson);
-router.delete("/lesson/deleteLesson/:lessonId", isAuthenticated, deleteLesson);
+router.post("/lesson/saveLesson", saveLesson);
+router.delete("/lesson/deleteLesson/:lessonId", deleteLesson);
 module.exports = router;

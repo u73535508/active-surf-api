@@ -7,8 +7,8 @@ const {
 } = require("../controllers/expense");
 const { isAuthenticated } = require("../middleware/auth");
 
-router.post("/expense/saveExpense", isAuthenticated, saveExpense);
-router.get("/expense/getExpensesInRange", isAuthenticated, getExpensesInRange);
-router.delete("/expense/deleteExpense/:id", isAuthenticated, deleteExpense);
+router.post("/expense/saveExpense", saveExpense);
+router.get("/expense/getExpensesInRange", getExpensesInRange);
+router.delete("/expense/deleteExpense/:id", deleteExpense);
 
 module.exports = router;

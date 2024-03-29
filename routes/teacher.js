@@ -8,7 +8,7 @@ const { isAuthenticated } = require("../middleware/auth");
 
 const router = express.Router();
 
-router.get("/teacher/getAllTeachers", isAuthenticated, getAllTeachers);
-router.post("/teacher/saveTeacher", isAuthenticated, saveTeacher);
-router.delete("/teacher/deleteTeacher/:id", isAuthenticated, deleteTeacher);
+router.get("/teacher/getAllTeachers", getAllTeachers);
+router.post("/teacher/saveTeacher", saveTeacher);
+router.delete("/teacher/deleteTeacher/:id", deleteTeacher);
 module.exports = router;

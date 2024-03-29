@@ -8,17 +8,17 @@ const {
 const { isAuthenticated } = require("../middleware/auth");
 
 const router = express.Router();
-router.get("/storage/getStoragesInRange", isAuthenticated, getStoragesInRange);
+router.get("/storage/getStoragesInRange", getStoragesInRange);
 router.get(
   "/storage/getStoragesForMember/:memberId",
-  isAuthenticated,
+
   getStoragesForMember
 );
-router.post("/storage/saveStorage", isAuthenticated, saveStorage);
+router.post("/storage/saveStorage", saveStorage);
 
 router.delete(
   "/storage/deleteStorage/:storageId",
-  isAuthenticated,
+
   deleteStorage
 );
 module.exports = router;
