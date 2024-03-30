@@ -6,7 +6,7 @@ const ErrorResponse = require("../utils/errorResponse");
 
 exports.isAuthenticated = async (req, res, next) => {
   const { token } = req.cookies;
-  console.log("token", token);
+  console.log("token", req);
   // make sure token exist
   if (!token) {
     return next(
