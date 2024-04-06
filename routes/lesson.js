@@ -7,7 +7,7 @@ const {
   deleteLesson,
   getLessonsForTeacherInRange,
 } = require("../controllers/lesson");
-const { isAuthenticated, enticated } = require("../middleware/auth");
+const { isAuthenticated } = require("../middleware/auth");
 
 const router = express.Router();
 router.get(
