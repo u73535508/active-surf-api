@@ -45,14 +45,7 @@ exports.signin = async (req, res, next) => {
 };
 const generateToken = async (user, res) => {
   const token = await user.jwtGenerateToken();
-  const options = {
-    httpOnly: true,
-    expires: new Date(Date.now() + parseInt(process.env.EXPIRE_TOKEN)), // Geçerli bir tarih değeri ekleyin
-  };
-  res
-    .status(res.statusCode)
-    .cookie("token", token, options)
-    .json({ success: true, token });
+  res.status(res.statusCode).json({ success: true, token });
 };
 exports.singleUser = async (req, res, next) => {
   try {
@@ -61,8 +54,4 @@ exports.singleUser = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-};
-exports.logout = (req, res, next) => {
-  res.clearCookie("token");
-  res.status(200).json({ success: true, message: "Logged out" });
 };

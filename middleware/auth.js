@@ -5,7 +5,7 @@ const ErrorResponse = require("../utils/errorResponse");
 // check if user is authenticated
 
 exports.isAuthenticated = async (req, res, next) => {
-  const { token } = req.cookies;
+  const token = req.headers.authorization?.split(" ")[1];
   console.log("token", req);
   // make sure token exist
   if (!token) {

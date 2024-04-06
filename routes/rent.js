@@ -11,11 +11,11 @@ const router = express.Router();
 
 router.get(
   "/rent/getRentsForMember/:memberId",
-
+  isAuthenticated,
   getRentsForMember
 );
-router.post("/rent/saveRent", saveRent);
-router.delete("/rent/deleteRent/:rentId", deleteRent);
+router.post("/rent/saveRent", isAuthenticated, saveRent);
+router.delete("/rent/deleteRent/:rentId", isAuthenticated, deleteRent);
 
-router.get("/rent/getRentsInRange", getRentsInRange);
+router.get("/rent/getRentsInRange", isAuthenticated, getRentsInRange);
 module.exports = router;
