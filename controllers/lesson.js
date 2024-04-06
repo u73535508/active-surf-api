@@ -30,7 +30,6 @@ exports.getLessonsForTeacher = async (req, res, next) => {
   }
 };
 exports.getLessonsForTeacherInRange = async (req, res, next) => {
-  console.log(req.query);
   const { startDate, endDate, teacherId } = req.query;
   try {
     const lessons = await Lesson.find({

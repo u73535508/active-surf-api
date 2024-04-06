@@ -6,7 +6,6 @@ const ErrorResponse = require("../utils/errorResponse");
 
 exports.isAuthenticated = async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
-  console.log("token", req);
   // make sure token exist
   if (!token) {
     return next(
@@ -23,7 +22,6 @@ exports.isAuthenticated = async (req, res, next) => {
 
     // fetch user by id from database
     const user = await User.findById(decoded.id);
-    console.log("user", user);
     if (!user) {
       throw new Error("User not found");
     }

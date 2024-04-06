@@ -43,7 +43,6 @@ exports.getMember = async (req, res, next) => {
 
 exports.deleteMember = async (req, res, next) => {
   try {
-    console.log("req.params.id", req.params.id);
     const member = await Member.findByIdAndDelete(req.params.id);
     res.status(200).json({ success: true, member });
   } catch (error) {

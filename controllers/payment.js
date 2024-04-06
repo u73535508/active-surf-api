@@ -57,9 +57,7 @@ exports.getPaymentsForService = async (req, res, next) => {
 
 exports.deletePayment = async (req, res, next) => {
   try {
-    console.log("req.params.id", req.params.id);
     const payment = await Payment.findByIdAndDelete(req.params.id);
-    console.log("payment", payment);
     res.status(200).json({ success: true, payment });
   } catch (error) {
     next(error);

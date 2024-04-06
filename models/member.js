@@ -35,7 +35,6 @@ const memberSchema = new mongoose.Schema({
   },
 });
 memberSchema.post("findOneAndDelete", async function (doc) {
-  console.log("heyo heyo");
   if (doc) {
     const Lesson = require("./lesson");
     const Storage = require("./storage");
@@ -44,7 +43,6 @@ memberSchema.post("findOneAndDelete", async function (doc) {
     const Payment = require("./payment");
     const Camp = require("./camp");
     const memberId = doc._id;
-    console.log("memberId", memberId);
     await Lesson.deleteMany({ memberId: memberId });
     await Storage.deleteMany({ memberId: memberId });
     await Rent.deleteMany({ memberId: memberId });

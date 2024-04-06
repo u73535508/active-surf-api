@@ -24,7 +24,6 @@ exports.userProfile = async (req, res, next) => {
 };
 exports.signin = async (req, res, next) => {
   try {
-    console.log("girdim");
     const { username, password } = req.body;
     if (!username || !password) {
       next(new ErrorResponse("Email and password are required", 400));
