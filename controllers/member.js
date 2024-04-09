@@ -49,3 +49,16 @@ exports.deleteMember = async (req, res, next) => {
     next(error);
   }
 };
+exports.updateMembersDebt = async (req, res, next) => {
+  try {
+    const { memberId, amount } = req.body;
+    console.log("memberId", memberId);
+    console.log("amount", amount);
+    const member = await Member.findById(memberId);
+    member.debt += amount;
+    await member.save();
+    res.status(200).json({ success: true, member });
+  } catch (error) {
+    next(error);
+  }
+};
