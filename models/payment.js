@@ -17,7 +17,6 @@ const PaymentSchema = new mongoose.Schema({
   serviceId: {
     type: mongoose.Schema.Types.ObjectId,
     refPath: "serviceType",
-    required: [true, "Hizmet ID'si giriniz."],
   },
   rate: {
     type: String,
@@ -29,11 +28,10 @@ const PaymentSchema = new mongoose.Schema({
   memberId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Member",
-    required: [true, "Üye ID'si giriniz."],
   },
   serviceType: {
     type: String,
-    enum: ["Lesson", "Storage", "Rent", "Debt", "Camp"],
+    enum: ["Lesson", "Storage", "Rent", "Debt", "Camp", "Cantin"],
     required: [true, "Hizmet tipi giriniz."],
   },
 });
