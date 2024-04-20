@@ -11,6 +11,7 @@ exports.savePayment = async (req, res, next) => {
       serviceType,
       rate,
       memberId,
+      description,
     } = req.body;
     const payment = new Payment({
       type,
@@ -20,6 +21,7 @@ exports.savePayment = async (req, res, next) => {
       rate,
       memberName,
       amount,
+      description,
       date: new Date(date),
     });
 

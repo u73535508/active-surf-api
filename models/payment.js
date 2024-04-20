@@ -29,6 +29,9 @@ const PaymentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Member",
   },
+  description: {
+    type: String,
+  },
   serviceType: {
     type: String,
     enum: ["Lesson", "Storage", "Rent", "Debt", "Camp", "Cantin"],
